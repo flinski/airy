@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+	--color-ui-50: oklch(98.5% 0 0);
+	--color-ui-100: oklch(97% 0 0);
+	--color-ui-200: oklch(92.2% 0 0);
+	--color-ui-300: oklch(87% 0 0);
+	--color-ui-400: oklch(70.8% 0 0);
+	--color-ui-500: oklch(55.6% 0 0);
+	--color-ui-600: oklch(43.9% 0 0);
+	--color-ui-700: oklch(37.1% 0 0);
+	--color-ui-800: oklch(26.9% 0 0);
+	--color-ui-900: oklch(20.5% 0 0);
+	--color-ui-950: oklch(14.5% 0 0);
+
+	--color-accent-50: oklch(0.97 0.01 255);
+	--color-accent-100: oklch(0.93 0.03 256);
+	--color-accent-200: oklch(0.88 0.06 254);
+	--color-accent-300: oklch(0.81 0.1 252);
+	--color-accent-400: oklch(0.71 0.14 255);
+	--color-accent-500: oklch(0.62 0.19 260);
+	--color-accent-600: oklch(0.55 0.22 263);
+	--color-accent-700: oklch(0.49 0.22 264);
+	--color-accent-800: oklch(0.42 0.18 266);
+	--color-accent-900: oklch(0.38 0.14 266);
+	--color-accent-950: oklch(0.28 0.09 268);
+
+	--text-h1: 2.986rem;
+	--text-h2: 2.488rem;
+	--text-h3: 2.074rem;
+	--text-h4: 1.728rem;
+	--text-h5: 1.44rem;
+	--text-h6: 1.2rem;
+	--text-p: 1rem;
+	--text-small: 0.833rem;
+	--text-tiny: 0.694rem;
+
+	--leading-heading: 1.15;
+	--leading-text: 1.5;
+}
+
+[data-theme="light"] {
+	color-scheme: light;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+}
