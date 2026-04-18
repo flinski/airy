@@ -5,7 +5,7 @@ function HeroSection() {
 		<section>
 			<div className="bg-ui-950 relative h-screen overflow-hidden">
 				<Image
-					src="/hero5.jpg"
+					src="/hero-bg.jpg"
 					alt="Hero"
 					width={3840}
 					height={2876}
