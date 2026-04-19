@@ -49,6 +49,27 @@ function PhilosophySection() {
 							/>
 						</div>
 					</div>
+					<div className="grid grid-cols-2 gap-4">
+						<div className="relative aspect-square w-full">
+							<Image
+								src="/category-unisex.jpg"
+								alt="Alt"
+								width={1470}
+								height={1940}
+								className="absolute top-0 left-0 h-full w-full overflow-hidden object-cover object-center"
+							/>
+						</div>
+						<div className="flex h-full items-end">
+							<div className="flex flex-col gap-4">
+								<h3 className="text-3xl">Ethical Craft</h3>
+								<p className="text-ui-700">
+									We honor the hands that create, ensuring fair partnerships and meticulous artistry
+									in every stitch. Our dedication to ethical craftsmanship guarantees timeless
+									quality, fostering a wardrobe built on integrity and respect.
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</Container>
 		</section>
