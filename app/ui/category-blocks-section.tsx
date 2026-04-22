@@ -3,7 +3,7 @@ import CategoryBlock from "@/app/ui/category-block";
 const categories = [
 	{
 		name: "Men",
-		image: "/category-men.jpg",
+		image: "/category/category-men.jpg",
 		href: "/men",
 		alt: "Men's Category",
 		width: 1470,
@@ -11,7 +11,7 @@ const categories = [
 	},
 	{
 		name: "Women",
-		image: "/category-women.jpg",
+		image: "/category/category-women.jpg",
 		href: "/women",
 		alt: "Women's Category",
 		width: 1800,
@@ -19,7 +19,7 @@ const categories = [
 	},
 	{
 		name: "Unisex",
-		image: "/category-unisex.jpg",
+		image: "/category/category-unisex.jpg",
 		href: "/unisex",
 		alt: "Unisex Category",
 		width: 1472,
