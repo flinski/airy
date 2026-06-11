@@ -5,6 +5,45 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+	--color-ui-50: oklch(98.5% 0 0);
+	--color-ui-100: oklch(97% 0 0);
+	--color-ui-200: oklch(92.2% 0 0);
+	--color-ui-300: oklch(87% 0 0);
+	--color-ui-400: oklch(70.8% 0 0);
+	--color-ui-500: oklch(55.6% 0 0);
+	--color-ui-600: oklch(43.9% 0 0);
+	--color-ui-700: oklch(37.1% 0 0);
+	--color-ui-800: oklch(26.9% 0 0);
+	--color-ui-900: oklch(20.5% 0 0);
+	--color-ui-950: oklch(14.5% 0 0);
+
+	--color-brand-50: oklch(0.95 0.02 62.739);
+	--color-brand-100: oklch(0.887 0.047 62.739);
+	--color-brand-200: oklch(0.824 0.078 62.739);
+	--color-brand-300: oklch(0.76 0.107 62.739);
+	--color-brand-400: oklch(0.697 0.098 62.739);
+	--color-brand-500: oklch(0.634 0.089 62.739);
+	--color-brand-600: oklch(0.554 0.078 62.739);
+	--color-brand-700: oklch(0.474 0.067 62.739);
+	--color-brand-800: oklch(0.394 0.056 62.739);
+	--color-brand-900: oklch(0.314 0.044 62.739);
+	--color-brand-950: oklch(0.234 0.033 62.739);
+
+	--text-h1: 2.986rem;
+	--text-h2: 2.488rem;
+	--text-h3: 2.074rem;
+	--text-h4: 1.728rem;
+	--text-h5: 1.44rem;
+	--text-h6: 1.2rem;
+	--text-p: 1rem;
+	--text-small: 0.833rem;
+	--text-tiny: 0.694rem;
+
+	--leading-heading: 1.15;
+	--leading-text: 1.5;
+}
+
 @theme inline {
 	--font-heading: var(--font-sans);
 	--font-sans: "Inter Variable", sans-serif;

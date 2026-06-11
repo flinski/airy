@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import HomePage from "@/pages/HomePage"
 import CatalogPage from "@/pages/CatalogPage"
 import ProductPage from "@/pages/ProductPage"
@@ -15,35 +17,46 @@ import AdminOrdersPage from "@/pages/admin/AdminOrdersPage"
 import AdminProductsPage from "@/pages/admin/AdminProductsPage"
 import AdminProductFormPage from "@/pages/admin/AdminProductFormPage"
 
+const queryClient = new QueryClient()
+
 const App = () => {
 	return (
-		<BrowserRouter>
-			<Routes>
-				{/* Public routes */}
-				<Route path="/" element={<HomePage />} />
-				<Route path="/men" element={<CatalogPage />} />
-				<Route path="/women" element={<CatalogPage />} />
-				<Route path="/children" element={<CatalogPage />} />
-				<Route path="/product/:slug" element={<ProductPage />} />
-				<Route path="/cart" element={<CartPage />} />
-				<Route path="/checkout" element={<CheckoutPage />} />
-				<Route path="/login" element={<LoginPage />} />
-				<Route path="/register" element={<RegisterPage />} />
-				<Route path="*" element={<NotFoundPage />} />
+		<QueryClientProvider client={queryClient}>
+			<BrowserRouter>
+				<Routes>
+					{/* Public routes */}
+					<Route path="/" element={<HomePage />} />
+					<Route path="/men" element={<CatalogPage />} />
+					<Route path="/women" element={<CatalogPage />} />
+					<Route path="/children" element={<CatalogPage />} />
+					<Route path="/product/:slug" element={<ProductPage />} />
+					<Route path="/cart" element={<CartPage />} />
+					<Route path="/checkout" element={<CheckoutPage />} />
+					<Route path="/login" element={<LoginPage />} />
+					<Route path="/register" element={<RegisterPage />} />
+					<Route path="*" element={<NotFoundPage />} />
 
-				{/* Protected routes: auth */}
-				<Route path="/account" element={<AccountPage />} />
-				<Route path="/account/orders" element={<OrdersPage />} />
-				<Route path="/account/wishlist" element={<WishlistPage />} />
+					{/* Protected routes: auth */}
+					<Route path="/account" element={<AccountPage />} />
+					<Route path="/account/orders" element={<OrdersPage />} />
+					<Route path="/account/wishlist" element={<WishlistPage />} />
 
-				{/* Admin routes: role=admin */}
-				<Route path="/admin" element={<AdminDashboardPage />} />
-				<Route path="/admin/orders" element={<AdminOrdersPage />} />
-				<Route path="/admin/products" element={<AdminProductsPage />} />
-				<Route path="/admin/products/new" element={<AdminProductFormPage />} />
-				<Route path="/admin/products/:id" element={<AdminProductFormPage />} />
-			</Routes>
-		</BrowserRouter>
+					{/* Admin routes: role=admin */}
+					<Route path="/admin" element={<AdminDashboardPage />} />
+					<Route path="/admin/orders" element={<AdminOrdersPage />} />
+					<Route path="/admin/products" element={<AdminProductsPage />} />
+					<Route
+						path="/admin/products/new"
+						element={<AdminProductFormPage />}
+					/>
+					<Route
+						path="/admin/products/:id"
+						element={<AdminProductFormPage />}
+					/>
+				</Routes>
+			</BrowserRouter>
+			<ReactQueryDevtools initialIsOpen={false} />
+		</QueryClientProvider>
 	)
 }
 
