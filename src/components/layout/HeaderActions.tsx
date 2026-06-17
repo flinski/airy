@@ -40,7 +40,7 @@ const HeaderActions = () => {
 							<Button
 								size="icon-lg"
 								asChild
-								className="text-ui-950 hover:bg-brand-500 hover:text-brand-50 bg-transparent"
+								className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
 							>
 								<NavLink to={to}>
 									<Icon className="size-5" />
@@ -52,7 +52,7 @@ const HeaderActions = () => {
 					return (
 						<Button
 							size="icon-lg"
-							className="text-ui-950 hover:bg-brand-500 hover:text-brand-50 bg-transparent"
+							className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
 						>
 							<Icon className="size-5" />
 						</Button>

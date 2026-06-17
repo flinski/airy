@@ -11,6 +11,7 @@ export type Category = {
 	name: string
 	slug: string
 	gender: "male" | "female" | "children"
+	image_url: string
 }
 
 export type Product = {
@@ -32,19 +33,11 @@ export type ProductVariant = {
 	material: string
 	price: number
 	stock: number
-}
-
-export type ProductImage = {
-	id: string
-	product_id: string
-	url: string
-	is_primary: boolean
-	sort_order: number
+	image_url: string
 }
 
 export type ProductWithVariants = {
 	product_variants: ProductVariant[]
-	product_images: ProductImage[]
 	categories: Category
 } & Product
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 const Logo = () => {
 	return (
-		<Button size="icon-lg" asChild className="bg-brand-500 hover:bg-brand-400">
+		<Button size="icon-lg" asChild className="bg-brand-400 hover:bg-brand-300">
 			<NavLink to="/">
 				<CrownIcon className="size-5" />
 			</NavLink>

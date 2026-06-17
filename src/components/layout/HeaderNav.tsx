@@ -24,7 +24,7 @@ const HeaderNav = () => {
 					<li key={to}>
 						<Button
 							asChild
-							className="text-ui-950 hover:bg-brand-500 hover:text-brand-50 bg-transparent leading-none"
+							className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent leading-none"
 						>
 							<NavLink to={to}>{label}</NavLink>
 						</Button>
