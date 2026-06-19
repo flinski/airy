@@ -1,9 +1,9 @@
 import supabase from "@/services/supabase"
 import type { Category } from "@/types/database"
-import type { CategoriesFilters } from "@/types/app"
+import type { CategoryFilters } from "@/types/app"
 
 export const getCategories = async (
-	filters?: CategoriesFilters
+	filters?: CategoryFilters
 ): Promise<Category[]> => {
 	let query = supabase.from("categories").select("*")
 

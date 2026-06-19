@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import { getCategories } from "@/services/apiCategories"
-import type { CategoriesFilters } from "@/types/app"
+import type { CategoryFilters } from "@/types/app"
 
-const useGetCategories = (filters?: CategoriesFilters) => {
+const useGetCategories = (filters?: CategoryFilters) => {
 	const {
 		isLoading,
 		error,

@@ -1,23 +1,15 @@
 import Container from "@/components/layout/Container"
-import CategoryGrid from "@/features/catalog/CategoryGrid"
-import useGetProducts from "@/features/catalog/useGetProducts"
+import CategoryGrid from "@/features/catalog/category/CategoryGrid"
+import ProductGrid from "@/features/catalog/product/ProductGrid"
 
 const CatalogPage = () => {
-	const { products } = useGetProducts()
-
 	return (
-		<div className="py-6">
-			<Container>
-				<div className="flex flex-col gap-6">
-					<CategoryGrid />
-					<div>
-						{products?.map((product) => (
-							<div key={product.id}>{product.name}</div>
-						))}
-					</div>
-				</div>
-			</Container>
-		</div>
+		<Container className="py-6">
+			<div className="flex flex-col gap-8">
+				<CategoryGrid />
+				<ProductGrid />
+			</div>
+		</Container>
 	)
 }
 
