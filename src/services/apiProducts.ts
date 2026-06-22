@@ -1,11 +1,13 @@
 import supabase from "@/services/supabase"
 import type { ProductFilters } from "@/types/app"
-import type { Product } from "@/types/database"
+import type { ProductWithCategoryAndVariants } from "@/types/database"
 
 export const getProducts = async (
 	filters?: ProductFilters
-): Promise<Product[]> => {
-	let query = supabase.from("products").select("*, category: category_id(*)")
+): Promise<ProductWithCategoryAndVariants[]> => {
+	let query = supabase
+		.from("products")
+		.select("*, category: category_id(*), variants: product_variants(*)")
 
 	if (filters) {
 		if (filters.name) {

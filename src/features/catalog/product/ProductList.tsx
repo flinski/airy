@@ -10,7 +10,7 @@ const ProductList = () => {
 			slug: useCategoryFromRoute(),
 		},
 	})
-	console.log(products)
+	console.log("products:", products)
 
 	if (isLoading) {
 		return <div>Loading...</div>
@@ -22,7 +22,7 @@ const ProductList = () => {
 	}
 
 	return (
-		<ul className="grid grid-cols-4 gap-4">
+		<ul className="grid grid-cols-4 gap-x-4 gap-y-24">
 			{products?.map((product) => (
 				<ProductItem product={product} />
 			))}

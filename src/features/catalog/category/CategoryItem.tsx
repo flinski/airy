@@ -12,7 +12,11 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
 	const isSelectedCategory = slug === searchParams.get("category")
 
 	const handleSelectCategory = () => {
-		setSearchParams({ category: slug })
+		if (isSelectedCategory) {
+			setSearchParams({})
+		} else {
+			setSearchParams({ category: slug })
+		}
 	}
 
 	return (
