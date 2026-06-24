@@ -28,7 +28,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
 			<div
 				className={cn(
 					"relative aspect-3/4 overflow-hidden",
-					isSelectedCategory && "outline outline-offset-1 outline-black"
+					isSelectedCategory && "outline-brand-500 outline-2"
 				)}
 			>
 				<img
@@ -40,7 +40,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
 			<div
 				className={cn(
 					"text-center text-sm",
-					isSelectedCategory && "font-medium"
+					isSelectedCategory && "text-brand-500 font-bold"
 				)}
 			>
 				{name}

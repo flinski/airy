@@ -38,7 +38,7 @@ const HeaderActions = () => {
 					if (to) {
 						return (
 							<Button
-								size="icon-lg"
+								size="icon"
 								asChild
 								className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
 							>
@@ -51,7 +51,7 @@ const HeaderActions = () => {
 
 					return (
 						<Button
-							size="icon-lg"
+							size="icon"
 							className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
 						>
 							<Icon className="size-5" />
