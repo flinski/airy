@@ -1,5 +1,6 @@
 import useGetProducts from "@/features/catalog/product/useGetProducts"
 import ProductItem from "@/features/catalog/product/ProductItem"
+import ProductListSkeleton from "@/features/catalog/product/ProductListSkeleton"
 import useGenderFromRoute from "@/features/catalog/useGenderFromRoute"
 import useCategoryFromRoute from "@/features/catalog/useCategoryFromRoute"
 
@@ -13,7 +14,7 @@ const ProductList = () => {
 	console.log("products:", products)
 
 	if (isLoading) {
-		return <div>Loading...</div>
+		return <ProductListSkeleton />
 	}
 
 	if (error) {
@@ -24,7 +25,7 @@ const ProductList = () => {
 	return (
 		<ul className="grid grid-cols-4 gap-x-4 gap-y-24">
 			{products?.map((product) => (
-				<ProductItem product={product} />
+				<ProductItem key={product.id} product={product} />
 			))}
 		</ul>
 	)

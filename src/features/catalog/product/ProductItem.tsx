@@ -10,7 +10,7 @@ type ProductItemsProps = {
 }
 
 const ProductItem = ({ product }: ProductItemsProps) => {
-	const { id, name, slug, base_price, variants } = product
+	const { name, slug, base_price, variants } = product
 	const [colorIndex, setColorIndex] = useState(0)
 
 	const handleHoverColor = (index: number) => {
@@ -18,9 +18,9 @@ const ProductItem = ({ product }: ProductItemsProps) => {
 	}
 
 	return (
-		<li key={id} className="flex cursor-pointer flex-col gap-1">
+		<li className="flex cursor-pointer flex-col gap-1">
 			<Link to={`/product/${slug}`}>
-				<div className="bg-brand-50 relative aspect-3/4 overflow-hidden">
+				<div className="bg-ui-100 relative aspect-3/4 overflow-hidden">
 					<img
 						src={variants[colorIndex]?.image_url}
 						alt={name}
@@ -29,7 +29,7 @@ const ProductItem = ({ product }: ProductItemsProps) => {
 				</div>
 				<div className="flex flex-col gap-1">
 					<div className="flex items-center justify-between">
-						<div className="flex items-center gap-1">
+						<div className="flex items-center gap-1.5">
 							{variants.map((variant, index) => (
 								<div
 									style={{ backgroundColor: variant.color }}
@@ -42,7 +42,11 @@ const ProductItem = ({ product }: ProductItemsProps) => {
 								></div>
 							))}
 						</div>
-						<Button size="icon-sm" variant="ghost">
+						<Button
+							size="icon-sm"
+							variant="ghost"
+							className="hover:text-brand-500 hover:bg-transparent"
+						>
 							<HeartIcon className="size-5" />
 						</Button>
 					</div>

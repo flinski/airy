@@ -1,6 +1,7 @@
 import useGenderFromRoute from "@/features/catalog/useGenderFromRoute"
 import useGetCategories from "@/features/catalog/category/useGetCategories"
 import CategoryItem from "@/features/catalog/category/CategoryItem"
+import CategoryListSkeleton from "@/features/catalog/category/CategoryListSkeleton"
 
 const CategoryList = () => {
 	const { isLoading, error, categories } = useGetCategories({
@@ -8,7 +9,7 @@ const CategoryList = () => {
 	})
 
 	if (isLoading) {
-		return <div>Loading...</div>
+		return <CategoryListSkeleton />
 	}
 
 	if (error) {
