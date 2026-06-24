@@ -9,20 +9,20 @@ import { Button } from "@/components/ui/button"
 
 const actions = [
 	{
-		label: "Поиск",
+		title: "Поиск",
 		icon: SearchIcon,
 	},
 	{
-		label: "Избранное",
+		title: "Избранное",
 		icon: HeartIcon,
 		to: "account/wishlist",
 	},
 	{
-		label: "Корзина",
+		title: "Корзина",
 		icon: ShoppingCartIcon,
 	},
 	{
-		label: "Аккаунт",
+		title: "Аккаунт",
 		icon: UserRoundIcon,
 		to: "account",
 	},
@@ -31,31 +31,35 @@ const actions = [
 const HeaderActions = () => {
 	return (
 		<div>
-			<ul>
-				{actions.map(({ icon, to }) => {
+			<ul className="flex items-center">
+				{actions.map(({ title, icon, to }) => {
 					const Icon = icon
 
 					if (to) {
 						return (
-							<Button
-								size="icon"
-								asChild
-								className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
-							>
-								<NavLink to={to}>
-									<Icon className="size-5" />
-								</NavLink>
-							</Button>
+							<li key={title}>
+								<Button
+									size="icon"
+									asChild
+									className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
+								>
+									<NavLink to={to}>
+										<Icon className="size-5" />
+									</NavLink>
+								</Button>
+							</li>
 						)
 					}
 
 					return (
-						<Button
-							size="icon"
-							className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
-						>
-							<Icon className="size-5" />
-						</Button>
+						<li key={title}>
+							<Button
+								size="icon"
+								className="text-ui-950 hover:bg-brand-400 hover:text-brand-50 bg-transparent"
+							>
+								<Icon className="size-5" />
+							</Button>
+						</li>
 					)
 				})}
 			</ul>

@@ -29,9 +29,10 @@ const ProductItem = ({ product }: ProductItemsProps) => {
 				</div>
 				<div className="flex flex-col gap-1">
 					<div className="flex items-center justify-between">
-						<div className="flex items-center gap-1.5">
+						<ul className="flex items-center gap-1.5">
 							{variants.map((variant, index) => (
-								<div
+								<li
+									key={variant.id}
 									style={{ backgroundColor: variant.color }}
 									onMouseEnter={() => handleHoverColor(index)}
 									className={cn(
@@ -39,9 +40,9 @@ const ProductItem = ({ product }: ProductItemsProps) => {
 										index === colorIndex &&
 											"outline outline-offset-1 outline-black"
 									)}
-								></div>
+								></li>
 							))}
-						</div>
+						</ul>
 						<Button
 							size="icon-sm"
 							variant="ghost"

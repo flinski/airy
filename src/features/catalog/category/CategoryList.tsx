@@ -20,7 +20,7 @@ const CategoryList = () => {
 	return (
 		<ul className="grid grid-cols-7 gap-4">
 			{categories?.map((category) => (
-				<CategoryItem category={category} />
+				<CategoryItem key={category.id} category={category} />
 			))}
 		</ul>
 	)

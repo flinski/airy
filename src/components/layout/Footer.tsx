@@ -28,21 +28,23 @@ const Footer = () => {
 			<Container className="py-5">
 				<div className="flex items-center justify-between text-sm">
 					<div>© AIRY 2014—{new Date().getFullYear()}. Все права защищены.</div>
-					<ul>
+					<ul className="flex items-center">
 						{socials.map(({ title, icon, href }) => {
 							const Icon = icon
 
 							return (
-								<Button
-									size="icon"
-									title={title}
-									asChild
-									className="hover:text-brand-400 text-current"
-								>
-									<a href={href} target="_blank">
-										<Icon className="size-5" />
-									</a>
-								</Button>
+								<li key={title}>
+									<Button
+										size="icon"
+										title={title}
+										asChild
+										className="hover:text-brand-400 text-current"
+									>
+										<a href={href} target="_blank">
+											<Icon className="size-5" />
+										</a>
+									</Button>
+								</li>
 							)
 						})}
 					</ul>
