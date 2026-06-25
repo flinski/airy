@@ -23,6 +23,11 @@ export const getProducts = async (
 			query = query.eq("category.slug", filters.category.slug)
 			query = query.not("category", "is", null)
 		}
+		if (filters.sort) {
+			query = query.order("base_price", {
+				ascending: filters.sort === "price-asc",
+			})
+		}
 	}
 
 	const { data: products, error } = await query

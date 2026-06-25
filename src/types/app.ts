@@ -11,4 +11,5 @@ export type ProductFilters = {
 	category?: {
 		slug?: string
 	}
+	sort?: string
 }

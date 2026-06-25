@@ -12,11 +12,14 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
 	const isSelectedCategory = slug === searchParams.get("category")
 
 	const handleSelectCategory = () => {
-		if (isSelectedCategory) {
-			setSearchParams({})
+		const nextParams = new URLSearchParams(searchParams)
+
+		if (!isSelectedCategory) {
+			nextParams.set("category", slug)
 		} else {
-			setSearchParams({ category: slug })
+			nextParams.delete("category")
 		}
+		setSearchParams(nextParams)
 	}
 
 	return (
