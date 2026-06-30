@@ -28,7 +28,7 @@ const SortByPrice = () => {
 
 	return (
 		<Select
-			key={location.pathname}
+			key={`${location.pathname}${location.search}-${location.key}`}
 			onValueChange={handleSelectSort}
 			value={currentSort || undefined}
 		>

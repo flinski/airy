@@ -3,7 +3,8 @@ import ProductItem from "@/features/catalog/product/ProductItem"
 import ProductListSkeleton from "@/features/catalog/product/ProductListSkeleton"
 import useGenderFromRoute from "@/features/catalog/useGenderFromRoute"
 import useCategoryFromRoute from "@/features/catalog/useCategoryFromRoute"
-import useSortFormRoute from "@/features/catalog/useSortFormRoute"
+import useSortFromRoute from "@/features/catalog/useSortFromRoute"
+import useSizesFromRoute from "@/features/catalog/useSizesFromRoute"
 
 const ProductList = () => {
 	const { isLoading, error, products } = useGetProducts({
@@ -11,7 +12,8 @@ const ProductList = () => {
 		category: {
 			slug: useCategoryFromRoute(),
 		},
-		sort: useSortFormRoute(),
+		sort: useSortFromRoute(),
+		sizes: useSizesFromRoute(),
 	})
 	console.log("products:", products)
 

@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router"
 
-const useSortFormRoute = () => {
+const useSortFromRoute = () => {
 	const [searchParams] = useSearchParams()
 	return searchParams.get("sort") ?? undefined
 }
 
-export default useSortFormRoute
+export default useSortFromRoute

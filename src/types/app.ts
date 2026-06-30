@@ -12,4 +12,5 @@ export type ProductFilters = {
 		slug?: string
 	}
 	sort?: string
+	sizes?: string
 }

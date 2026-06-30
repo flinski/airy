@@ -7,7 +7,7 @@ export const getProducts = async (
 ): Promise<ProductWithCategoryAndVariants[]> => {
 	let query = supabase
 		.from("products")
-		.select("*, category: category_id(*), variants: product_variants(*)")
+		.select("*, category: category_id(*), variants: product_variants!inner(*)")
 
 	if (filters) {
 		if (filters.name) {
@@ -27,6 +27,10 @@ export const getProducts = async (
 			query = query.order("base_price", {
 				ascending: filters.sort === "price-asc",
 			})
+		}
+		if (filters.sizes) {
+			const selectedSizes = filters.sizes.split(",")
+			query = query.in("variants.size", selectedSizes)
 		}
 	}
 
